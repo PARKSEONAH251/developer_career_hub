@@ -1,0 +1,137 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.5;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #444550;
+  color: #fff;
+  padding: 23px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 70px;
+  padding-left: 10px;
+}
+
+.container {
+  margin-top: -3%;
+  display: grid;
+  margin-left: 5%;
+  grid-template-columns: 25% 30% 30%;
+  grid-template-rows: 100px 300px 300px 300px;
+  margin-bottom: 1%;
+}
+
+/* 네비게이션 스타일 */
+nav ul {
+  list-style-type: none;
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 80px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 0px;
+}
+
+/* 로그인 폼 스타일 */
+.login-box {
+  grid-row: 2;
+  width: 70%;
+  border: 0.1px solid #ccc;
+  border-radius: 13px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+.login-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.login-form button:hover {
+  background-color: #0056b3;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+}
+
+
+/* 캘린더 스타일 */
+#calendar {
+  grid-row: 3;
+  width: 70%;
+  margin-top: 20px;
+  border: 0px solid #ccc;
+  border-radius: 13px;
+  text-align: center;
+}
+
+/* 메인 배너 스타일 */
+#main {
+  grid-row: 2 / 5;
+  grid-column: 2 / 4;
+  margin-left: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  text-align: center;
+}
+
+/* 달력 테이블 스타일 */
+#calendar table {
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  width: 100%; 
+}
+
+#calendar table th,
+#calendar table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#calendar table th {
+  background-color: #f2f2f2;
+}
+
+#calendar table td {
+  cursor: pointer;
+}
+
+#calendar table td:hover {
+  background-color: #f2f2f2;
+}
