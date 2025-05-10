@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DCH</title>
+  <link rel="stylesheet" href="Capstyle.css"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #444550;
+        color: #fff;
+    }
+</style>
+
+</head>
+
+<body>
+  <header>
+    <span style="font-size:500%;"><b>D</b></span><span style="font-size:300%;">eveloper</span>&emsp;
+    <span style="font-size:500%;"><b>C</b></span><span style="font-size:300%;">areer</span>&emsp;
+    <span style="font-size:500%;"><b>H</b></span><span style="font-size:300%;">ub</span>
+
+    <nav>
+      <ul>
+        <li class="menu-item">
+          <a href="#">지원공고</a> &emsp;&emsp;&emsp;
+        </li>
+        <li><a href="#">|</a></li>&emsp;&emsp;&emsp;
+        <li class="menu-item">
+          <a href="#">포트폴리오</a>&emsp;&emsp;&emsp;
+        </li>
+        <li><a href="#">|</a></li>&emsp;&emsp;&emsp;
+        <li class="menu-item">
+          <a href="#">커뮤니티</a>&emsp;&emsp;&emsp;
+        </li>
+        <li><a href="#">|</a></li>&emsp;&emsp;&emsp;
+        <li class="menu-item">
+          <a href="#">개발자교육</a>&emsp;&emsp;&emsp;
+        </li>
+        <li><a href="#">|</a></li>&emsp;&emsp;&emsp;
+        <li class="menu-item">
+          <a href="#">코딩학습</a>&emsp;&emsp;&emsp;
+        </li>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="login-box">
+      <h2>로그인</h2>
+      <form class="login-form">
+        <input type="text" placeholder="사용자 이름" required><br>
+        <input type="password" placeholder="비밀번호" required><br>
+        <button type="submit">로그인</button>
+      </form>
+    </div>
+
+    <div id="calendar"></div>
+
+    <div id="main">
+      <h2>진행 중인 공모전</h2>
+    </div>
+
+
+    <div id="calendar-container">
+      <div id="calendar"></div>
+    </div>
+    <script src="calendar.js"></script>
+
+  </div>
+  <footer>
+    &copy; Developer Career Hub
+</footer>
+</body>
+
+</html>
