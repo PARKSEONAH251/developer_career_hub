@@ -1,0 +1,203 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 30px;
+    color: #0066ff;
+    text-align: left;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 400px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.nav-bar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 10px 50px;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    position: relative;
+}
+.nav-bar a.active {
+    color: #0066ff;
+    font-weight: bold;
+}
+
+.nav-bar a.active::after {
+    width: 100%;
+}
+
+
+.nav-bar a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #0066ff;
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.nav-bar a:hover::after {
+    width: 100%;
+}
+
+.login-register a {
+    text-decoration: none;
+    color: #0066ff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 40px;
+}
+
+article {
+    width: 300px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #0001;
+}
+
+article img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    cursor: pointer;
+}
+
+article div {
+    padding: 16px;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 0 0 8px 0;
+}
+
+p {
+    font-size: 15px;
+    color: #444444;
+}
+
+.uploadBtn {
+    text-align: right;
+    margin: 20px;
+
+}
+
+.upBtn {
+    background: #0066ff;
+    color: #ffffff;
+    border: none;
+    padding:  10px 30px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-bg{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-bg.active {
+    display: flex;
+}
+
+.modal-box {
+    background: #FFFFFF;
+    border-radius: 16px;
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 32px 24px 24px 24px;
+    box-shadow: 0 4px 32px #0004;
+    position: relative;
+    text-align: center;
+}
+
+.modal-box img {
+    max-width: 80vw;
+    max-height: 60vh;
+    border-radius: 12px;
+}
+
+.modal-close { 
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    font-size: 28px;
+    color: #888888;
+    cursor: pointer;
+    font-weight: bold;
+    background: none;
+    border: none;
+}
+
+.modal-title {
+    margin-top: 16px;
+    font-size: 24px;
+}
+
+.modal-cont {
+    margin: 12px 0 0 0;
+    font-size: 17px;
+    color: #555555;
+}
