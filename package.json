@@ -1,0 +1,25 @@
+{
+  "name": "developer_career_hub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "start": "react-scripts start",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+  "repository": {
+    "start": "react-scripts start",
+    "type": "git",
+    "url": "git+https://github.com/PARKSEONAH251/developer_career_hub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PARKSEONAH251/developer_career_hub/issues"
+  },
+  "homepage": "https://github.com/PARKSEONAH251/developer_career_hub#readme",
+  "dependencies": {
+    "react-scripts": "^5.0.1"
+  }
+}
