@@ -22,7 +22,7 @@ public class Kdigital {
     @Column(name = "훈련기관명", length = 255)
     private String trainingInstitution;
 
-    @Column(name = "주소_회사번호", length = 400)
+    @Column(name = "`주소/회사번호`", length = 400)
     private String addressPhone;
 
     @Column(name = "훈련과정명", length = 400)

@@ -1,0 +1,30 @@
+.main-footer {
+  background-color: #1c1f26;
+  color: white;
+  padding: 20px 40px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-right {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}

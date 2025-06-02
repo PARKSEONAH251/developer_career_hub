@@ -1,0 +1,107 @@
+/* src/styles/Kdigital.css */
+
+.kd-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.kd-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.kd-button-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.kd-button-group button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.kd-button-group button:hover {
+  background-color: #0056b3;
+}
+
+.kd-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.kd-card-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.kd-card-box:hover {
+  transform: translateY(-4px);
+}
+
+.kd-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kd-meta {
+  font-size: 14px;
+  color: #666;
+}
+
+.kd-pagination {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.kd-pagination button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 36px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.kd-pagination button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+  font-weight: bold;
+}
+
+.kd-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.kd-course-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.kd-meta {
+  font-size: 14px;
+  color: #555;
+  margin: 4px 0;
+}

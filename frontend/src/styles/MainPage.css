@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 30px;
+  color: #0066ff;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.search-bar input[type="text"] {
+  padding: 20px 40px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 800px;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.nav-bar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px 50px;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 250px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  position: relative;
+}
+
+.nav-bar a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #0066ff;
+  transition: width .3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav-bar a:hover::after {
+  width: 100%;
+}
+
+.login-register a {
+  text-decoration: none;
+  color: #0066ff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.main-banner {
+  background: #f0f2f5;
+  height: 300px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: #ddd;
+  height: 200px;
+  border-radius: 15px;
+}

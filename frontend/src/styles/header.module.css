@@ -1,0 +1,100 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  background-color: white;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+/* 왼쪽 영역: 로고 + 메뉴 */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 1 1 auto;
+  min-width: 300px;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: flex-start; /* 명시적 왼쪽 정렬 */
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+
+.navMenu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+
+/* 오른쪽: 로그인/회원가입 */
+.authSection {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.logoText {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4285f4;
+}
+
+.loginBtn, .signupBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid #4285f4;
+  background-color: white;
+  color: #4285f4;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.loginBtn {
+  background-color: #4285f4;
+  color: white;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .authSection {
+    align-self: flex-end;
+  }
+
+  .navMenu {
+    justify-content: flex-start;
+    width: 100%; /* 전체 너비 사용 */
+    padding-left: 20px; /* 혹시 margin/padding 있을 경우 제거 */
+  }
+}
+
