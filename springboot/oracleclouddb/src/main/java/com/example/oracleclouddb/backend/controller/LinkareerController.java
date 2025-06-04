@@ -11,6 +11,7 @@ import java.util.List;
 /**
  * LINKAREER 테이블 데이터를 제공하는 컨트롤러입니다.
  */
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/linkareer")
 public class LinkareerController {
