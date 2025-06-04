@@ -1,0 +1,278 @@
+/* 전체 컨테이너 */
+.contest-container {
+  padding: 30px;
+  background-color: #f5f7fa;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 제목 */
+h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #2d6cdf;
+}
+
+/* 검색창 */
+.search-input {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px 15px;
+  width: 300px;
+  border: 1px solid #efe9e9;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* 카테고리 버튼 */
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.category-buttons button {
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #2d6cdf;
+  background-color: white;
+  color: #2d6cdf;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.category-buttons button.active,
+.category-buttons button:hover {
+  background-color: #2d6cdf;
+  color: white;
+}
+
+
+/* 카드 정렬 (grid) */
+.contest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+/* 공모전 카드 */
+.contest-card {
+  width: 260px;
+  background: rgb(233, 233, 241);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 15px;
+  transition: transform 0.2s;
+}
+
+.contest-card:hover {
+  transform: translateY(-4px);
+}
+
+.contest-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.contest-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 6px;
+}
+
+.contest-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 4px 0;
+}
+
+.dday {
+  color: #e53935;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* 상세보기 링크 */
+.contest-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #2d6cdf;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.contest-card a:hover {
+  background-color: #1e4fbf;
+}
+
+/* 페이지네이션 */
+.pagination {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.pagination button {
+  margin: 0 6px;
+  padding: 6px 12px;
+  border: 1px solid #f6dcdc;
+  background-color: white;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination button.active {
+  background-color: #2d6cdf;
+  color: white;
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 30px;
+  color: #0066ff;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.search-bar input[type="text"] {
+  padding: 20px 40px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 800px;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.nav-bar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px 50px;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 250px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  position: relative;
+}
+
+.nav-bar a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #0066ff;
+  transition: width .3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav-bar a:hover::after {
+  width: 100%;
+}
+
+.login-register a {
+  text-decoration: none;
+  color: #0066ff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.main-banner {
+  background: #f0f2f5;
+  height: 300px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: #ddd;
+  height: 200px;
+  border-radius: 15px;
+}
+
+
+
+/* 반응형 (태블릿/모바일) */
+@media (max-width: 1024px) {
+  .contest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .contest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-input {
+    width: 90%;
+  }
+}
+
+
