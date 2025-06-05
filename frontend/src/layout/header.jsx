@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // 상단 import에 추가
 import styles from '../styles/header.module.css';
 import signupIcon from '../image/signupicon.png';
 import workIcon from '../image/workicon.png';
@@ -10,12 +11,12 @@ const Heard = () => {
       <div className={styles.left}>
         <div className={styles.logoSection}>
           <img src={workIcon} alt="logo" className={styles.logoIcon} />
-          <span className={styles.logoText}>Developer Dareer Hub</span>
+          <Link to="/" className={styles.logoText}>Developer Dareer Hub</Link>
         </div>
         <nav className={styles.navMenu}>
-          <a href="#">채용정보</a>
-          <a href="#">부트캠프</a>
-          <a href="#">공모전</a>
+          <Link to="/JobList">채용정보</Link>
+          <Link to="/Kdigital">부트캠프</Link>
+          <Link to="/Contestpage">공모전</Link>
           <a href="#">포트폴리오</a>
         </nav>
       </div>

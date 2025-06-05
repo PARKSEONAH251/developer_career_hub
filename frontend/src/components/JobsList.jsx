@@ -1,26 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // 상단 import에 추가
+import Header from '../layout/header'; // 또는 './Header'
 import '../styles/JobCard.css'; // CSS 분리되어 있는 상태
-
-function Header() {
-  return (
-    <header className="top-nav">
-      <div className="nav-left">
-        <img src="/logo192.png" alt="logo" className="nav-logo" />
-        <span className="site-title">Developer Career Hub</span>
-        <nav className="nav-links">
-          <a href="#">채용정보</a>
-          <a href="#">부트캠프</a>
-          <a href="#">공모전</a>
-          <a href="#">포트폴리오</a>
-        </nav>
-      </div>
-      <div className="nav-right">
-        <button className="btn-outline">로그인</button>
-        <button className="btn-primary">회원가입</button>
-      </div>
-    </header>
-  );
-}
 
 function App() {
   const [jobList, setJobList] = useState([]);
@@ -55,7 +36,7 @@ function App() {
       <Header />
 
       <div className="container">
-        <h1 className="title">📋 채용 공고 목록</h1>
+        {/* <h1 className="title">📋 채용 공고 목록</h1> */}
 
         {/* 보기 개수 선택 */}
         <div className="button-group">

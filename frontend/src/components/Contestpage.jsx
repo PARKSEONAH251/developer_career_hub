@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Header from '../layout/header';
 import '../styles/Contestpage.css';
 
 const categories = ["전체", "AI", "웹개발", "프론트엔드", "백엔드", "게임", "데이터분석", "클라우드/DevOps", "풀스택", "모바일앱", "기타"];
@@ -84,29 +85,7 @@ const ContestPage = ({ isLoggedIn, favorites, handleFavorite }) => {
 
   return (
     <div>
-      {/* 헤더 및 네비게이션 */}
-      <header className="top-header">
-        <div className="logo">
-          <b>DEVELOPER <br /> CAREER HUB</b>
-        </div>
-        <div className="search-bar">
-          <input type="text" placeholder="검색어 입력" />
-          <button>🔍</button>
-        </div>
-      </header>
-      <div className="nav-bar-wrapper">
-        <div className="nav-bar">
-          <a href="#"><b>취업공고</b></a>
-          <a href="#"><b>코딩학습</b></a>
-          <a href="#"><b>공모전</b></a>
-          <a href="#"><b>커뮤니티</b></a>
-          <a href="#"><b>마이페이지</b></a>
-        </div>
-        <div className="login-register">
-          <a href="#">LOGIN / REGISTER</a>
-        </div>
-      </div>
-
+      <Header />
       {/* 공모전 리스트 본문 */}
       <div className="contest-container">
         <h1>
@@ -135,7 +114,7 @@ const ContestPage = ({ isLoggedIn, favorites, handleFavorite }) => {
           {currentItems.map((item, index) => (
             <div className="contest-card" key={index}>
               <button
-                className={`favorite-star ${favorites.includes(item.제목) ? 'active' : ''}`}
+                className={`favorite-star ${Array.isArray(favorites) && favorites.includes(item.제목) ? 'active' : ''}`}
                 onClick={() => {
                   if (!isLoggedIn) {
                     alert("로그인이 필요합니다.");
@@ -167,6 +146,11 @@ const ContestPage = ({ isLoggedIn, favorites, handleFavorite }) => {
       </div>
     </div>
   );
+};
+
+// 🛡️ 기본 props 설정
+ContestPage.defaultProps = {
+  favorites: [],
 };
 
 export default ContestPage;

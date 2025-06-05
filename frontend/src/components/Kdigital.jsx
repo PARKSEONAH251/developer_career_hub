@@ -1,5 +1,6 @@
 // src/pages/Kdigital.jsx
 import React, { useEffect, useState } from 'react';
+import Header from '../layout/header';
 import '../styles/Kdigital.css'; // CSS 분리
 
 function Kdigital() {
@@ -56,53 +57,56 @@ function Kdigital() {
   };
 
   return (
-    <div className="kd-container">
-      <h1 className="kd-title">📚 K-Digital Training 목록</h1>
+    <div>
+      <Header />
+      <div className="kd-container">
+        {/* <h1 className="kd-title">📚 K-Digital Training 목록</h1> */}
 
-      <div className="kd-button-group">
-        <button onClick={() => handleVisibleCountChange(10)}>10개 보기</button>
-        <button onClick={() => handleVisibleCountChange(20)}>20개 보기</button>
-        <button onClick={() => handleVisibleCountChange(50)}>50개 보기</button>
-      </div>
+        <div className="kd-button-group">
+          <button onClick={() => handleVisibleCountChange(10)}>10개 보기</button>
+          <button onClick={() => handleVisibleCountChange(20)}>20개 보기</button>
+          <button onClick={() => handleVisibleCountChange(50)}>50개 보기</button>
+        </div>
 
-      <div className="kd-card-grid">
-        {currentItems.map((item, idx) => {
-          const { address, phone } = splitAddressAndPhone(item.addressPhone);
-          return (
-            <div key={idx} className="kd-card-box">
-              <div className="kd-card-body">
-                <h3 className="kd-course-name">{item.courseName}</h3>
-                <p className="kd-meta">🏫 훈련기관: {item.trainingInstitution || '정보 없음'}</p>
-                <p className="kd-meta">📍 주소: {address}</p>
-                <p className="kd-meta">📞 전화: {phone}</p>
-                <p className="kd-meta">⏰ 훈련기간: {item.trainingPeriod || '정보 없음'}</p>
+        <div className="kd-card-grid">
+          {currentItems.map((item, idx) => {
+            const { address, phone } = splitAddressAndPhone(item.addressPhone);
+            return (
+              <div key={idx} className="kd-card-box">
+                <div className="kd-card-body">
+                  <h3 className="kd-course-name">{item.courseName}</h3>
+                  <p className="kd-meta">🏫 훈련기관: {item.trainingInstitution || '정보 없음'}</p>
+                  <p className="kd-meta">📍 주소: {address}</p>
+                  <p className="kd-meta">📞 전화: {phone}</p>
+                  <p className="kd-meta">⏰ 훈련기간: {item.trainingPeriod || '정보 없음'}</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
 
-      <div className="kd-pagination">
-        <button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>«</button>
-        <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1}>‹</button>
+        <div className="kd-pagination">
+          <button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>«</button>
+          <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1}>‹</button>
 
-        {Array.from({ length: totalPages }, (_, idx) => idx + 1)
-          .slice(
-            Math.max(currentPage - 5, 0),
-            Math.min(Math.max(currentPage - 5, 0) + 10, totalPages)
-          )
-          .map((num) => (
-            <button
-              key={num}
-              className={currentPage === num ? 'active' : ''}
-              onClick={() => handlePageChange(num)}
-            >
-              {num}
-            </button>
-          ))}
+          {Array.from({ length: totalPages }, (_, idx) => idx + 1)
+            .slice(
+              Math.max(currentPage - 5, 0),
+              Math.min(Math.max(currentPage - 5, 0) + 10, totalPages)
+            )
+            .map((num) => (
+              <button
+                key={num}
+                className={currentPage === num ? 'active' : ''}
+                onClick={() => handlePageChange(num)}
+              >
+                {num}
+              </button>
+            ))}
 
-        <button onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>›</button>
-        <button onClick={() => setCurrentPage(totalPages)} disabled={currentPage === totalPages}>»</button>
+          <button onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>›</button>
+          <button onClick={() => setCurrentPage(totalPages)} disabled={currentPage === totalPages}>»</button>
+        </div>
       </div>
     </div>
   );

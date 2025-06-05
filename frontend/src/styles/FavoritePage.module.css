@@ -1,0 +1,91 @@
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.backButton {
+  margin-bottom: 20px;
+  padding: 20px 30px;
+  background-color: #2d6cdf;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 0 2px 6px rgba(45, 108, 223, 0.5);
+}
+
+.emptyMessage {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.title {
+  margin: 12px 0 6px;
+  font-size: 20px;
+  color: #333;
+}
+
+.org {
+  margin: 0 0 10px;
+  color: #555;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailLink {
+  text-decoration: none;
+  color: #2d6cdf;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.starButton {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #f39c12;
+  user-select: none;
+  padding: 0;
+}
+
+.starButtonDisabled {
+  font-size: 24px;
+  color: #ccc;
+  background: none;
+  border: none;
+  user-select: none;
+  padding: 0;
+}
