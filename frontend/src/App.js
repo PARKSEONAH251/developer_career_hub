@@ -6,11 +6,13 @@ import MainPage from '../src/components/MainPage';
 import FavoritePage from '../src/components/FavoritePage';
 import Contestpage from '../src/components/Contestpage';
 import Portfolio from '../src/components/Portfolio';
+import PortfolioUpload from './components/PortfolioUpload';
 
 function Main() {
   return (
     <Router>
       <Routes>
+        <Route path='/PortfolioUpload' element={<PortfolioUpload/>}/>
         <Route path='/Portfolio' element={<Portfolio/>}/>
         <Route path='/Contestpage' element={<Contestpage/>}/>
         <Route path='/FavoritePage' element={<FavoritePage/>}/>
