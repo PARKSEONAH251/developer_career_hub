@@ -1,5 +1,6 @@
 // Portfolio.jsx
 import React, { useEffect, useState } from "react";
+import Header from '../layout/header';
 import "../styles/Portfolio_style.css";
 
 function PortfolioModal({ open, pin, onClose }) {
@@ -45,39 +46,7 @@ const Portfolio = () => {
 
   return (
     <div>
-      <header className="top-header">
-        <div className="logo">
-          <b>
-            DEVELOPER <br /> CAREER HUB
-          </b>
-        </div>
-        <div className="search-bar">
-          <input type="text" placeholder="검색어 입력" />
-          <button>🔍</button>
-        </div>
-      </header>
-      <div className="nav-bar-wrapper">
-        <div className="nav-bar">
-          <a href="#">
-            <b>취업공고</b>
-          </a>
-          <a href="#">
-            <b>코딩학습</b>
-          </a>
-          <a href="#">
-            <b>공모전</b>
-          </a>
-          <a href="#">
-            <b>포트폴리오</b>
-          </a>
-          <a href="#">
-            <b>마이페이지</b>
-          </a>
-        </div>
-        <div className="login-register">
-          <a href="#">LOGIN / REGISTER</a>
-        </div>
-      </div>
+      <Header/>
       <div className="uploadBtn">
         <a href="../Portfolio-upload">
           <button className="upBtn">포트폴리오 등록</button>

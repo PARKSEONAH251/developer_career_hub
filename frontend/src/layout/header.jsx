@@ -17,7 +17,7 @@ const Heard = () => {
           <Link to="/JobList">채용정보</Link>
           <Link to="/Kdigital">부트캠프</Link>
           <Link to="/Contestpage">공모전</Link>
-          <a href="#">포트폴리오</a>
+          <Link to="/Portfolio">포트폴리오</Link>
         </nav>
       </div>
       <div className={styles.authSection}>
