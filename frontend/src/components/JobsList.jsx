@@ -1,30 +1,50 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // 상단 import에 추가
-import Header from '../layout/header'; // 또는 './Header'
-import '../styles/JobCard.css'; // CSS 분리되어 있는 상태
+import { matchCategory } from '../utils/matchCategory';
+import Header from '../layout/header';
+import '../styles/JobCard.css';
 
 function App() {
   const [jobList, setJobList] = useState([]);
   const [visibleCount, setVisibleCount] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState("전체");
+  const [searchTerm, setSearchTerm] = useState(""); // ✅ 검색어 상태
 
   useEffect(() => {
     fetch('http://localhost:8080/api/jobs')
       .then(res => res.json())
       .then(data => {
-        setJobList(data);
+        const categorized = data.map(item => ({
+          ...item,
+          category: matchCategory(item)
+        }));
+        setJobList(categorized);
         setCurrentPage(1);
       });
   }, []);
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const categories = ["전체", "프론트엔드", "백엔드", "웹개발", "AI", "데이터분석", "게임", "클라우드/DevOps", "풀스택", "모바일앱", "기타"];
+
+  const filteredList = jobList
+    .filter(item =>
+      selectedCategory === "전체" || item.category === selectedCategory
+    )
+    .filter(item =>
+      item.jobTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.companyName.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
   const indexOfLastItem = currentPage * visibleCount;
   const indexOfFirstItem = indexOfLastItem - visibleCount;
-  const currentItems = jobList.slice(indexOfFirstItem, indexOfLastItem);
-  const totalPages = Math.ceil(jobList.length / visibleCount);
+  const currentItems = filteredList.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filteredList.length / visibleCount);
 
-  const handlePageChange = (pageNum) => {
-    setCurrentPage(pageNum);
-  };
+  const handlePageChange = (pageNum) => setCurrentPage(pageNum);
 
   const handleVisibleCountChange = (count) => {
     setVisibleCount(count);
@@ -35,17 +55,33 @@ function App() {
     <div>
       <Header />
 
-      <div className="container">
-        {/* <h1 className="title">📋 채용 공고 목록</h1> */}
+      {/* 🔍 검색창 */}
+      <input
+        type="text"
+        placeholder="제목이나 회사 검색"
+        className="search-input"
+        value={searchTerm}
+        onChange={handleSearch}
+      />
 
-        {/* 보기 개수 선택 */}
-        <div className="button-group">
-          <button onClick={() => handleVisibleCountChange(10)}>10개 보기</button>
-          <button onClick={() => handleVisibleCountChange(20)}>20개 보기</button>
-          <button onClick={() => handleVisibleCountChange(50)}>50개 보기</button>
+      <div className="container">
+        {/* 카테고리 필터 */}
+        <div className="category-buttons">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={selectedCategory === cat ? "active" : ""}
+              onClick={() => {
+                setSelectedCategory(cat);
+                setCurrentPage(1);
+              }}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
 
-        {/* 카드형 UI */}
+        {/* 채용 카드 리스트 */}
         <div className="card-grid">
           {currentItems.map((job, idx) => (
             <div key={idx} className="job-card-box">
@@ -55,6 +91,7 @@ function App() {
               <div className="job-card-body">
                 <h3 className="job-title">{job.jobTitle}</h3>
                 <p className="company-name">{job.companyName}</p>
+                <p className="job-category">📂 {job.category}</p>
                 <p className="job-meta">📍 {job.workLocation} · 💼 {job.career || '경력무관'}</p>
                 <p className="job-deadline">⏰ {job.deadline || '마감일 미정'}</p>
               </div>
@@ -68,10 +105,7 @@ function App() {
           <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>‹</button>
 
           {Array.from({ length: totalPages }, (_, idx) => idx + 1)
-            .slice(
-              Math.max(currentPage - 5, 0),
-              Math.min(Math.max(currentPage - 5, 0) + 10, totalPages)
-            )
+            .slice(Math.max(currentPage - 5, 0), Math.min(Math.max(currentPage - 5, 0) + 10, totalPages))
             .map((num) => (
               <button
                 key={num}

@@ -105,3 +105,15 @@
   color: #555;
   margin: 4px 0;
 }
+
+.region-selectors {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.region-selectors select {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 6px;
+}

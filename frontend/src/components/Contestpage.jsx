@@ -88,11 +88,11 @@ const ContestPage = ({ isLoggedIn, favorites, handleFavorite }) => {
       <Header />
       {/* 공모전 리스트 본문 */}
       <div className="contest-container">
-        <h1>
+        {/* <h1>
           <a href="http://localhost:59408/" style={{ textDecoration: 'none', color: 'inherit' }}>
             공모전 리스트
           </a>
-        </h1>
+        </h1> */}
 
         <input
           type="text"

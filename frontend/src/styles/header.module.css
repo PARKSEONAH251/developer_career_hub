@@ -1,10 +1,11 @@
+/* 헤더 전체 */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 24px;
   background-color: white;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
 }
 
@@ -17,14 +18,37 @@
   min-width: 300px;
 }
 
+/* 로고 전체 묶음 (수정된 부분) */
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* 아이콘과 텍스트 사이 간격 조절 */
+}
+
+/* 로고 아이콘 */
+.logoIcon {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+/* 로고 텍스트 */
+.logoText {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4285f4;
+  /* line-height: 1; */
+  margin-bottom: 0; /* margin-bottom 제거 */
+}
+
+/* 네비게이션 메뉴 */
 .navMenu {
   display: flex;
-  justify-content: flex-start; /* 명시적 왼쪽 정렬 */
+  justify-content: flex-start;
   align-items: center;
   gap: 40px;
   flex-wrap: wrap;
 }
-
 
 .navMenu a {
   text-decoration: none;
@@ -39,20 +63,9 @@
   flex-shrink: 0;
 }
 
-.logoIcon {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-}
-
-.logoText {
-  font-size: 18px;
-  font-weight: bold;
-  color: #4285f4;
-  margin-bottom: 20px;
-}
-
-.loginBtn, .signupBtn {
+/* 로그인 / 회원가입 버튼 */
+.loginBtn,
+.signupBtn {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -65,16 +78,19 @@
   font-size: 14px;
 }
 
+/* 로그인 버튼은 파란색 배경 */
 .loginBtn {
   background-color: #4285f4;
   color: white;
 }
 
+/* 아이콘 공통 */
 .icon {
   width: 16px;
   height: 16px;
 }
 
+/* 반응형 */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -94,8 +110,7 @@
 
   .navMenu {
     justify-content: flex-start;
-    width: 100%; /* 전체 너비 사용 */
-    padding-left: 20px; /* 혹시 margin/padding 있을 경우 제거 */
+    width: 100%;
+    padding-left: 20px;
   }
 }
-

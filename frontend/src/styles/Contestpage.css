@@ -17,9 +17,10 @@ h1 {
 /* 검색창 */
 .search-input {
   display: block;
-  margin: 0 auto 20px auto;
+  margin: 10 auto 20px auto;
   padding: 10px 15px;
-  width: 300px;
+  width: 60%;
+  height: 60px;
   border: 1px solid #efe9e9;
   border-radius: 6px;
   font-size: 14px;
@@ -32,6 +33,7 @@ h1 {
   justify-content: center;
   gap: 12px;
   margin-bottom: 20px;
+  margin-top : 30px;
 }
 
 .category-buttons button {
