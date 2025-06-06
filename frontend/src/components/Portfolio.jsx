@@ -1,5 +1,6 @@
 // Portfolio.jsx
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import Header from '../layout/header';
 import "../styles/Portfolio_style.css";
 
@@ -48,9 +49,9 @@ const Portfolio = () => {
     <div>
       <Header/>
       <div className="uploadBtn">
-        <a href="../Portfolio-upload">
+        <Link to="/PortfolioUpload">
           <button className="upBtn">포트폴리오 등록</button>
-        </a>
+        </Link>
       </div>
       <div id="portfolio-container">
         <main>

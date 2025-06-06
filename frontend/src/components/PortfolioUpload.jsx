@@ -47,7 +47,7 @@ const PortfolioUpload = () => {
     return (
         <div>
             <Header />
-            <h2>포트폴리오 업로드</h2>
+            {/* <h2>포트폴리오 업로드</h2> */}
             <form id="uploadForm" onSubmit={handleSubmit}>
                 <div className="container">
                     <div className="centered-form">
