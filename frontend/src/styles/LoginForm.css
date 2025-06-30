@@ -1,0 +1,186 @@
+/* 로그인 전체 화면 구성 */
+.login-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+/* 왼쪽: 이미지 배경 */
+.login-left {
+  flex: 1;
+  background-image: url('../image/login.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* 오른쪽: 로그인 폼 중앙 정렬 */
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f9fc;
+  height: 100vh;
+  padding: 0;
+}
+
+.login-card {
+  width: 100%;
+  /* max-width: 400px; */
+  height: 100%;
+  padding: 40px 32px;
+  background-color: #fff;
+  border-radius: 16px;
+  text-align: center;
+  box-sizing: border-box;
+
+  /* ✅ 중앙 정렬을 위한 Flex 속성 추가 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* 수직 중앙 정렬 */
+  align-items: center;      /* 수평 중앙 정렬 (선택) */
+}
+
+/* (선택) 카드 안에 이미지가 있을 경우 */
+.login-visual {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* 제목 및 부제목 */
+.login-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 24px;
+}
+
+/* 입력 필드 */
+.login-input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* 비밀번호 찾기 등 */
+.form-options {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+.form-options a {
+  font-size: 12px;
+  color: #1678f2;
+  text-decoration: none;
+}
+
+/* 로그인 버튼 */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #1678f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+/* 구분선 */
+.divider {
+  margin: 16px 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* 소셜 로그인 버튼 */
+.social-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.google-btn,
+.facebook-btn {
+  width: 48%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* 하단 회원가입 텍스트 */
+.signup-text {
+  font-size: 13px;
+  margin-top: 20px;
+  color: #666;
+}
+
+.signup-text a {
+  color: #1678f2;
+  text-decoration: none;
+}
+
+/* ✅ 반응형: 모바일 */
+@media screen and (max-width: 1024px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left {
+    display: none;
+  }
+
+  .login-right {
+    flex: none;
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login-card {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  .login-title {
+    font-size: 20px;
+  }
+
+  .login-subtitle {
+    font-size: 12px;
+  }
+
+  .login-input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .login-btn {
+    padding: 10px;
+  }
+
+  .social-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .google-btn,
+  .facebook-btn {
+    width: 100%;
+  }
+}

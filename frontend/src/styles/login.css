@@ -1,0 +1,41 @@
+/* 기본 (데스크탑 기준) */
+.login-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.login-left {
+  flex: 1;
+  background-image: url('../image/login.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  background-color: #f7f9fc;
+}
+
+/* 💡 반응형 (모바일/태블릿: 화면 폭 1024px 이하) */
+@media screen and (max-width: 1024px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left {
+    display: none; /* 이미지 영역 숨김 */
+  }
+
+  .login-right {
+    flex: none;
+    width: 100%;
+    padding: 40px 20px;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+}

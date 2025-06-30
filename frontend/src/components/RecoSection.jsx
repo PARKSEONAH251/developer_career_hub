@@ -11,7 +11,7 @@ function RecoSection() {
     fetch('http://localhost:8080/api/jobs')
       .then(res => res.json())
       .then(data => {
-        const sliced = data.slice(0, 4);
+        const sliced = data.slice(0, 8);
         const mapped = sliced.map(item => ({
           company: item.companyName,
           position: item.jobTitle,
@@ -23,7 +23,7 @@ function RecoSection() {
     fetch('http://localhost:8080/api/kdigital')
       .then(res => res.json())
       .then(data => {
-        const sliced = data.slice(0, 4);
+        const sliced = data.slice(0, 8);
         const mapped = sliced.map(item => ({
           title: item.courseName,
           desc: item.trainingInstitution,
